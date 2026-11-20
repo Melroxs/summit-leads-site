@@ -155,6 +155,17 @@ export default function Home() {
         </form>
       </section>
 
+      <a
+        className="whatsapp-float"
+        href="https://wa.me/27739081412?text=Hi%20Summit%20Leads!%20I%27m%20interested%20in%20your%20services.%20Could%20you%20tell%20me%20more%3F"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Summit Leads on WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.7 12.7 0 0 0 5.1 22.35L3.3 28.8l6.6-1.73A12.7 12.7 0 1 0 16.04 3.2Zm0 23.1c-1.93 0-3.82-.52-5.47-1.5l-.4-.24-3.92 1.03 1.05-3.82-.26-.4a10.4 10.4 0 1 1 9 4.93Zm5.7-7.8c-.31-.16-1.85-.91-2.14-1.01-.29-.11-.5-.16-.71.16-.21.31-.82 1.01-1 1.22-.19.21-.37.24-.69.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.56-1.85-1.74-2.16-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.7-.98-2.33-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.62s1.13 3.04 1.29 3.25c.16.21 2.22 3.39 5.38 4.76.75.32 1.33.52 1.79.66.75.24 1.44.21 1.98.13.6-.09 1.85-.76 2.11-1.49.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37Z"/></svg>
+        <span>Chat with us</span>
+      </a>
+
       <footer className="footer">
         <div className="footer-main"><a href="#top" className="footer-brand"><img src="https://raw.githubusercontent.com/Melroxs/summit-leads-site/main/summit-leads-cropped.png" alt="Summit Leads" /></a><p>Digital growth.<br />Intelligent technology.<br /><em>More ways forward.</em></p><a className="back-top" href="#top">BACK TO TOP ↑</a></div>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} SUMMIT LEADS LTD</span><span>GROW WITH INTENTION. BUILD WITH PURPOSE.</span><a href="https://summitleadsltd.com">SUMMITLEADSLTD.COM ↗</a></div>
