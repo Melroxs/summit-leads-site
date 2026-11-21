@@ -90,3 +90,11 @@
 .portfolio-note{font-size:10px;line-height:1.7;color:#839087;margin:20px 0 0}
 @media(max-width:950px){.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.portfolio-feature{grid-template-columns:1fr}.portfolio-feature-art{min-height:300px}}
 @media(max-width:600px){.portfolio-grid{grid-template-columns:1fr}.portfolio-feature-copy{padding:32px 24px}.journey-flow{gap:7px}.journey-flow i{display:none}.journey-flow span{font-size:9px}.portfolio-feature-art{min-height:270px}.portfolio-heading{display:block}.portfolio-heading>p{margin:18px 0 0}}
+
+/* Contact form submission feedback and spam trap */
+.form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important}
+.contact-form button:disabled{opacity:.65;cursor:wait;transform:none}
+.form-feedback{font-size:12px;line-height:1.7;padding:13px 15px;border:1px solid #49606b;background:#142f3d}
+.form-feedback a{color:var(--lime);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.form-success{border-color:#6d9e83;color:#d8f1e3}
+.form-error{border-color:#d79a80;color:#f2c7b5}
