@@ -129,6 +129,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="portfolio section-pad" id="portfolio">
+        <div className="section-kicker">SELECTED WORK <span>FEATURED BUILD</span></div>
+        <div className="portfolio-heading">
+          <div><h2>Ideas made<br /><em>operational.</em></h2></div>
+          <p>A look at the digital products and experiences we design and build — combining thoughtful interfaces with technology that solves real business problems.</p>
+        </div>
+        <a className="portfolio-card atlas-project" href="https://atlas-ai-os.com" target="_blank" rel="noopener noreferrer" aria-label="Explore Atlas AI OS">
+          <div className="atlas-preview" aria-hidden="true">
+            <div className="atlas-window">
+              <div className="atlas-window-top"><span></span><span></span><span></span><b>ATLAS / CLAIM INTELLIGENCE</b></div>
+              <div className="atlas-window-body">
+                <div className="atlas-sidebar"><i></i><i></i><i></i><i></i><i></i></div>
+                <div className="atlas-dashboard">
+                  <small>RESTORATION OPERATIONS</small><strong>Know everything.<br />Miss nothing.</strong>
+                  <div className="atlas-metrics"><span><b>01</b><i>CLAIM REVIEW</i></span><span><b>02</b><i>EVIDENCE</i></span><span><b>03</b><i>RECOVERY</i></span></div>
+                  <div className="atlas-progress"><i></i></div>
+                </div>
+              </div>
+            </div>
+            <span className="atlas-glow"></span>
+          </div>
+          <div className="portfolio-card-copy">
+            <div><span className="portfolio-label">01 / AI-POWERED SAAS PLATFORM</span><h3>Atlas AI OS</h3><p>An AI operating system for insurance restoration contractors — bringing claim documentation, evidence review and revenue recovery into one connected workflow.</p></div>
+            <span className="portfolio-visit">EXPLORE LIVE PLATFORM <b>↗</b></span>
+          </div>
+        </a>
+        <div className="portfolio-footnote"><span>PRODUCT DESIGN</span><span>AI & WORKFLOW AUTOMATION</span><span>RESTORATION TECHNOLOGY</span></div>
+      </section>
+
       <section className="process section-pad" id="approach">
         <div className="section-kicker">HOW WE WORK <span>04 / 04</span></div>
         <div className="section-heading"><h2>Clear thinking.<br /><em>Thoughtful execution.</em></h2><p>Good work starts with listening. Then we make a plan, get moving and keep making it better.</p></div>
