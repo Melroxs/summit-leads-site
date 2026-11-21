@@ -73,7 +73,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <main>
       <header className="site-header">
-        <Link className="brand" href="/"><img src="/summit-leads-cropped.png" alt="Summit Leads" /></Link>
+        <Link className="brand" href="/"><img src="https://raw.githubusercontent.com/Melroxs/summit-leads-site/main/summit-leads-cropped.png" alt="Summit Leads" /></Link>
         <nav className="nav"><Link href="/#services">What we do</Link><Link href="/#approach">Our approach</Link><Link href="/#about">About</Link><Link className="nav-cta" href="/#contact">Let’s talk <span>↗</span></Link></nav>
       </header>
       <section className="service-detail-hero">
