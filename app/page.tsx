@@ -63,7 +63,7 @@ export default function Home() {
         <nav id="primary-navigation" className={menuOpen ? "nav nav-open" : "nav"}>
           <a href="#services" onClick={() => setMenuOpen(false)}>What we do</a>
           <a href="#approach" onClick={() => setMenuOpen(false)}>Our approach</a>
-          <a href="#work" onClick={() => setMenuOpen(false)}>Who we help</a>
+          <a href="#portfolio" onClick={() => setMenuOpen(false)}>Our work</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           <a className="nav-cta" href="#contact" onClick={() => setMenuOpen(false)}>Let’s talk <span>↗</span></a>
         </nav>
@@ -116,6 +116,103 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="portfolio section-pad" id="portfolio">
+        <div className="section-kicker">SELECTED DIGITAL CONCEPTS <span>LIVE DEMOS / 11 EXPERIENCES</span></div>
+        <div className="section-heading portfolio-heading">
+          <h2>Ideas made<br /><em>real and explorable.</em></h2>
+          <p>A collection of live website concepts and digital journeys created to demonstrate how thoughtful design, clear messaging and useful technology can work together.</p>
+        </div>
+        <div className="portfolio-feature">
+          <div className="portfolio-feature-copy">
+            <span className="portfolio-label">LEAD GENERATION / CUSTOMER JOURNEY</span>
+            <h3>NPP Roofing & Restoration</h3>
+            <p>A focused lead-generation portfolio for a U.S. roofing and restoration business, organised around three high-intent customer needs: preventative inspections, storm damage and restoration, and roof repairs or maintenance.</p>
+            <div className="journey-flow" aria-label="Illustrative customer journey">
+              <span><b>01</b> Discover</span><i>→</i><span><b>02</b> Choose a need</span><i>→</i><span><b>03</b> Request help</span><i>→</i><span><b>04</b> Qualify & follow up</span><i>→</i><span><b>05</b> Book an inspection</span>
+            </div>
+            <small>Illustrative journey: visitor intent → relevant service landing page → enquiry → qualification and follow-up → inspection booking.</small>
+            <a className="button button-primary" href="https://summit-leads-website-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">Explore NPP portfolio <span>↗</span></a>
+          </div>
+          <div className="portfolio-feature-art" aria-hidden="true">
+            <div className="roof-line roof-line-one" /><div className="roof-line roof-line-two" />
+            <div className="journey-node node-one">01 <b>INSPECT</b></div>
+            <div className="journey-node node-two">02 <b>RESTORE</b></div>
+            <div className="journey-node node-three">03 <b>REPAIR</b></div>
+            <div className="journey-center">NPP<span>GROWTH</span></div>
+            <div className="journey-orbit" />
+          </div>
+        </div>
+        <div className="portfolio-grid">
+          <article className="portfolio-card portfolio-card-lodge">
+            <div className="portfolio-card-top"><span>HOSPITALITY / BOOKING EXPERIENCE</span><b>01</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">⌁</span><span className="visual-word">ESCAPE<br />THE EVERYDAY</span></div>
+            <h3>Mountain Lodge</h3><p>A hospitality website concept designed to sell the stay, showcase the setting and guide visitors toward an enquiry.</p>
+            <a href="https://mountain-lodge-demo-wprxt3am4-melroxs-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-style">
+            <div className="portfolio-card-top"><span>PERSONAL BRAND / E-COMMERCE JOURNEY</span><b>02</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">✳</span><span className="visual-word">STYLE<br />CURATED</span></div>
+            <h3>Personal Stylist & Shopper</h3><p>A premium personal styling concept that presents services clearly and moves visitors toward a consultation.</p>
+            <a href="https://personal-stylist-shopper-demo-orl1ra43m-melroxs-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-build">
+            <div className="portfolio-card-top"><span>CONSTRUCTION / SERVICE WEBSITE</span><b>03</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">⌂</span><span className="visual-word">BUILT<br />WITH PURPOSE</span></div>
+            <h3>G&I Construction</h3><p>A construction business concept with service-led content and clear paths for prospective customers.</p>
+            <a href="https://gi-construction-demo-r5eldwu8m-melroxs-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-hair">
+            <div className="portfolio-card-top"><span>BEAUTY / SALON EXPERIENCE</span><b>04</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">✦</span><span className="visual-word">YOUR<br />SIGNATURE LOOK</span></div>
+            <h3>Hair Salon</h3><p>A salon website concept built around visual identity, service discovery and appointment enquiries.</p>
+            <a href="https://hair-salon-demo-irz848ivx-melroxs-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-manna">
+            <div className="portfolio-card-top"><span>FOOD / LOCAL BUSINESS</span><b>05</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">❋</span><span className="visual-word">SWEET<br />MOMENTS</span></div>
+            <h3>Manna & Quail</h3><p>A bakery and sweet-treats website concept shaped around its social presence, product imagery and local discovery.</p>
+            <a href="https://manna-quail-brackenfell.vercel.app/" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-azure">
+            <div className="portfolio-card-top"><span>HAIR / BRAND EXPERIENCE</span><b>06</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">✧</span><span className="visual-word">AZURE<br />HAIR PROFESSIONALS</span></div>
+            <h3>Azure Hair Professionals</h3><p>A polished salon concept with service discovery and direct enquiry pathways.</p>
+            <a href="https://summit-local-beauty-demos.vercel.app/azure" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-salt">
+            <div className="portfolio-card-top"><span>BEAUTY / WELLNESS</span><b>07</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">◌</span><span className="visual-word">SALT<br />& STILLNESS</span></div>
+            <h3>Salt</h3><p>A beauty and wellness brand concept focused on atmosphere, services and conversion-friendly navigation.</p>
+            <a href="https://summit-local-beauty-demos.vercel.app/salt" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-illumine">
+            <div className="portfolio-card-top"><span>BEAUTY / STUDIO</span><b>08</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">✺</span><span className="visual-word">ILLUMINE<br />YOUR MOMENT</span></div>
+            <h3>Illumine</h3><p>A boutique beauty studio concept with an editorial visual direction and service-led journey.</p>
+            <a href="https://summit-local-beauty-demos.vercel.app/illumine" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-timeless">
+            <div className="portfolio-card-top"><span>BEAUTY / PERSONAL CARE</span><b>09</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">◇</span><span className="visual-word">TIMELESS<br />BY DESIGN</span></div>
+            <h3>Timeless</h3><p>A refined beauty business concept designed to communicate services and encourage enquiries.</p>
+            <a href="https://summit-local-beauty-demos.vercel.app/timeless" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-dmh">
+            <div className="portfolio-card-top"><span>LOCAL BUSINESS / PROFESSIONAL SERVICES</span><b>10</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">▤</span><span className="visual-word">DMH<br />PROFESSIONAL</span></div>
+            <h3>DMH</h3><p>A professional services website concept with structured information and direct enquiry actions.</p>
+            <a href="https://summit-local-beauty-demos.vercel.app/dmh" target="_blank" rel="noopener noreferrer">Explore live demo <span>↗</span></a>
+          </article>
+          <article className="portfolio-card portfolio-card-hub">
+            <div className="portfolio-card-top"><span>SHOWCASE / MULTI-CONCEPT HUB</span><b>11</b></div>
+            <div className="portfolio-visual"><span className="visual-mountain">S+</span><span className="visual-word">EXPLORE<br />THE COLLECTION</span></div>
+            <h3>Local business demo collection</h3><p>A central showcase for the Azure, Salt, Illumine, Timeless and DMH concept websites.</p>
+            <a href="https://summit-local-beauty-demos.vercel.app/" target="_blank" rel="noopener noreferrer">Explore demo hub <span>↗</span></a>
+          </article>
+        </div>
+        <p className="portfolio-note">These are concept demonstrations and portfolio builds, not claims of commissioned client results. Demo forms and booking actions may use demonstration flows rather than live business systems.</p>
       </section>
 
       <section className="feature-band" id="work">
