@@ -8,7 +8,7 @@ const services = [
     icon: "↗",
     title: "Lead generation & growth",
     description: "Turn attention into opportunities with targeted campaigns, conversion-focused landing pages and follow-up systems built to move prospects into conversations.",
-    tags: ["Paid advertising", "Landing pages", "Lead capture", "Appointment setting"]
+    tags: ["Prospect research", "Lead capture", "Appointment setting", "Sales development"]
   },
   {
     number: "02",
@@ -54,10 +54,10 @@ export default function Home() {
         <a className="brand" href="#top" aria-label="Summit Leads home">
           <img src="https://raw.githubusercontent.com/Melroxs/summit-leads-site/main/summit-leads-cropped.png" alt="Summit Leads" />
         </a>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded={menuOpen}>
           <span /><span />
         </button>
-        <nav className={menuOpen ? "nav nav-open" : "nav"}>
+        <nav id="primary-navigation" className={menuOpen ? "nav nav-open" : "nav"}>
           <a href="#services" onClick={() => setMenuOpen(false)}>What we do</a>
           <a href="#approach" onClick={() => setMenuOpen(false)}>Our approach</a>
           <a href="#work" onClick={() => setMenuOpen(false)}>Who we help</a>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="hero-content">
           <div className="eyebrow"><span className="eyebrow-dot" /> DIGITAL GROWTH. INTELLIGENT TECHNOLOGY.</div>
           <h1>Make your next<br /><span>move your best.</span></h1>
-          <p className="hero-copy">We help ambitious businesses find more customers, build better digital experiences and make work flow smarter.</p>
+          <p className="hero-copy">We help ambitious businesses generate qualified leads, book more conversations, build better digital experiences and make work flow smarter.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#contact">Tell us what you’re building <span>↗</span></a>
             <a className="text-link" href="#services">Explore our services <span>↓</span></a>
@@ -144,12 +144,12 @@ export default function Home() {
       </section>
 
       <section className="contact section-pad" id="contact">
-        <div className="contact-top"><div className="section-kicker light">HAVE A GOOD ONE IN MIND?</div><h2>Let’s make<br /><em>it happen.</em></h2><p>Tell us where you want to go. We’ll help you figure out a smart way to get there.</p></div>
+        <div className="contact-top"><div className="section-kicker light">HAVE A GOOD ONE IN MIND?</div><h2>Let’s make<br /><em>it happen.</em></h2><p>Tell us where you want to go. We’ll help you shape a practical plan to generate opportunities, build the right technology or automate the work slowing you down.</p></div>
         <form className="contact-form" onSubmit={submitContact}>
           <label>Your name<input name="name" required placeholder="How should we address you?" /></label>
           <label>Work email<input name="email" type="email" required placeholder="you@company.com" /></label>
           <label>Business / company<input name="business" placeholder="Your business name" /></label>
-          <label>What can we help with?<select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Lead generation & marketing</option><option>Website development</option><option>App & custom software development</option><option>AI & business automation</option><option>Something else</option></select></label>
+          <label>What can we help with?<select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Lead generation & marketing</option><option>Prospect research & appointment setting</option><option>Website development</option><option>App & custom software development</option><option>AI & business automation</option><option>Something else</option></select></label>
           <label className="full-field">A little about your project<textarea name="message" rows={4} placeholder="What are you looking to achieve?" /></label>
           <div className="form-bottom"><button className="button button-primary" type="submit">Send your enquiry <span>↗</span></button><small>{sent ? "Your email app should open with your enquiry." : "Your details will be used only to respond to your enquiry."}</small></div>
         </form>
