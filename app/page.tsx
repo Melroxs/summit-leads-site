@@ -5,6 +5,7 @@ import { useState } from "react";
 const services = [
   {
     number: "01",
+    slug: "lead-generation",
     icon: "↗",
     title: "Lead generation & growth",
     description: "Turn attention into opportunities with targeted campaigns, conversion-focused landing pages and follow-up systems built to move prospects into conversations.",
@@ -12,6 +13,7 @@ const services = [
   },
   {
     number: "02",
+    slug: "web-development",
     icon: "⌘",
     title: "Web & app development",
     description: "Give your business the digital tools it needs — from a high-performing website to a custom platform that makes complex work feel simple.",
@@ -19,6 +21,7 @@ const services = [
   },
   {
     number: "03",
+    slug: "ai-automation",
     icon: "✳",
     title: "AI & business automation",
     description: "Connect the pieces of your operation, reduce repetitive work and create more responsive customer experiences with practical AI.",
@@ -109,7 +112,7 @@ export default function Home() {
               <div className="service-top"><span>{service.number} / CAPABILITY</span><span className="service-icon">{service.icon}</span></div>
               <h3>{service.title}</h3><p>{service.description}</p>
               <div className="tag-list">{service.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-              <a href="#contact" className="service-link" aria-label={`Enquire about ${service.title}`}>↗</a>
+              <a href={`/services/${service.slug}`} className="service-link" aria-label={`Explore ${service.title}`}>↗</a>
             </article>
           ))}
         </div>
