@@ -38,17 +38,37 @@ const process = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [sent, setSent] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [formMessage, setFormMessage] = useState("");
 
-  function submitContact(event: React.FormEvent<HTMLFormElement>) {
+  async function submitContact(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent("New Summit Leads enquiry");
-    const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nBusiness: ${data.get("business")}\nI'm interested in: ${data.get("service")}\n\nProject details:\n${data.get("message")}`
-    );
-    window.location.href = `mailto:hello@summitleadsltd.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+    setSent("sending");
+    setFormMessage("");
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/hello@summitleadsltd.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ ...data, _subject: "New Summit Leads website enquiry", _template: "table", _url: "https://summitleadsltd.com/" })
+      });
+      const result = await response.json();
+      if (String(result.success) !== "true") {
+        setSent("error");
+        const detail = String(result.message || "The enquiry could not be submitted.");
+        setFormMessage(detail.toLowerCase().includes("activation")
+          ? "One-time setup is still required: please check hello@summitleadsltd.com for FormSubmit’s activation email and confirm the form. You can also contact us directly on WhatsApp."
+          : detail + " Please try WhatsApp or email instead.");
+        return;
+      }
+      setSent("success");
+      setFormMessage("Thanks — your enquiry has been sent. We’ll be in touch soon.");
+      form.reset();
+    } catch {
+      setSent("error");
+      setFormMessage("We couldn’t connect to the enquiry service. Please contact us directly by WhatsApp or email.");
+    }
   }
 
   return (
@@ -246,12 +266,15 @@ export default function Home() {
       <section className="contact section-pad" id="contact">
         <div className="contact-top"><div className="section-kicker light">HAVE A GOOD ONE IN MIND?</div><h2>Let’s make<br /><em>it happen.</em></h2><p>Tell us where you want to go. We’ll help you shape a practical plan to generate opportunities, build the right technology or automate the work slowing you down.</p></div>
         <form className="contact-form" onSubmit={submitContact}>
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="form-honeypot" />
           <label>Your name<input name="name" required placeholder="How should we address you?" /></label>
           <label>Work email<input name="email" type="email" required placeholder="you@company.com" /></label>
           <label>Business / company<input name="business" placeholder="Your business name" /></label>
           <label>What can we help with?<select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Lead generation & marketing</option><option>Prospect research & appointment setting</option><option>Website development</option><option>App & custom software development</option><option>AI & business automation</option><option>Something else</option></select></label>
           <label className="full-field">A little about your project<textarea name="message" rows={4} placeholder="What are you looking to achieve?" /></label>
-          <div className="form-bottom"><button className="button button-primary" type="submit">Send your enquiry <span>↗</span></button><small>{sent ? "Your email app should open with your enquiry." : "Your details will be used only to respond to your enquiry."}</small></div>
+          <div className="form-bottom"><button className="button button-primary" type="submit" disabled={sent === "sending"}>{sent === "sending" ? "Sending…" : sent === "success" ? "Enquiry sent" : "Send your enquiry"} <span>↗</span></button><small aria-live="polite">{formMessage || "Your enquiry is sent to our inbox through a third-party form service. Please don’t include sensitive information."}</small></div>
+          {sent === "error" && <div className="form-feedback form-error full-field" role="alert">{formMessage} <a href="https://wa.me/27739081412?text=Hi%20Summit%20Leads%2C%20I%20tried%20your%20website%20enquiry%20form." target="_blank" rel="noopener noreferrer">Message us on WhatsApp ↗</a> · <a href="mailto:hello@summitleadsltd.com">Email us ↗</a></div>}
+          {sent === "success" && <div className="form-feedback form-success full-field" role="status">{formMessage}</div>}
         </form>
       </section>
 
